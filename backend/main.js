@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Add this line below your express setup
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with your React app's URL if deployed
+    origin: ['http://localhost:3000','http://10.22.31.175:3000/'], // Replace with your React app's URL if deployed
   }));
   
 
