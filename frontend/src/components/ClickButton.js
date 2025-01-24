@@ -40,7 +40,7 @@ const ClickButton = ({ userId }) => {
   };
 
   return (
-    <div className='appp' style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div className='appp' style={{ textAlign: 'center', marginTop: '150px' }}>
       <h1>Clicker Game</h1>
       <p>Total Clicks: {counter}</p>
       <p>Points Earned: {points}</p>
