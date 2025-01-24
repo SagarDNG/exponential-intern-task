@@ -9,9 +9,11 @@ const ClickButton = ({ userId }) => {
   const [prizes, setPrizes] = useState(0);
   const [rewardChance, setRewardChance] = useState(0);
   const [message, setMessage] = useState('');
+  const [toggle, setToggle] = useState(false);
 
   const handleClick = async () => {
     const result = await clickButton(userId);
+    setToggle(true);
 
     if (result) {
       setCounter(result.counter);
@@ -33,7 +35,7 @@ const ClickButton = ({ userId }) => {
         setMessage('👍 Keep clicking!');
       }
     } else {
-      setMessage('❌ Error occurred!');
+      setMessage('❌ Error occurred in Backend!');
     }
   };
 
@@ -58,6 +60,7 @@ const ClickButton = ({ userId }) => {
         Click Me
       </button>
       <p style={{ marginTop: '20px', color: '#555' }}>{message}</p>
+      {toggle &&  <p style={{ marginTop: '20px', color: '#555' }}>{`The Reward Chance this time was ${rewardChance.toFixed(2)}`}</p>}
     </div>
   );
 };
